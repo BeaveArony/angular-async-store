@@ -1,0 +1,21 @@
+<app-async-card
+  *ngIf="store | async as s"
+  [errorMessage]="s.error"
+  [loading]="s.loading"
+  [title]="'Products'"
+>
+  <app-list-item
+    *ngFor="let product of s.state"
+    [url]="product.image"
+    [content]="product.productName"
+  ></app-list-item>
+
+  <!-- <ng-container *ngIf="!s.state"> -->
+  <ng-container *ngIf="!s.state">
+    <app-list-item
+      *ngFor="let user of [1, 2, 3]"
+      [content]="null"
+      [url]="null"
+    ></app-list-item>
+  </ng-container>
+</app-async-card>

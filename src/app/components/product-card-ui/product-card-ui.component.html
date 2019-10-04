@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center p-4">
+  <div
+    class="bg-white max-w-2xl rounded-lg p-4 flex flex-col justify-between leading-normal"
+  >
+    <div class="flex">
+      <img class="w-24 h-24 mr-4" [src]="image" alt="Avatar" />
+      <div class="mb-8">
+        <p class="text-sm text-gray-600 flex items-center">
+          {{ department }}
+        </p>
+        <div [style.borderBottom]="'3px solid ' + color" class="text-gray-900 font-bold text-xl mb-2">
+          {{ productName }}
+        </div>
+        <p [style.color]="color" class="bg-gray-200 flex items-center p-2 mt-2">
+          {{ productMaterial }} {{ product }}
+        </p>
+        <p class="text-gray-900 text-lg mt-6">$ {{ price }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div
+  class="bg-white flex items-center px-2 py-2 mt-2 sm:ml-1 sm:mr-1 sm:rounded-lg"
+>
+  <div class="flex-shrink-0">
+    <img
+      *ngIf="url"
+      [class.rounded-full]="rounded"
+      class="bg-gray-400 w-8 h-8"
+      [src]="url"
+      alt="user image"
+    />
+    <div
+      *ngIf="url === null"
+      [class.rounded-full]="rounded"
+      class="bg-gray-400 w-8 h-8"
+    >
+      &nbsp;
+    </div>
+  </div>
+  <div class="flex-grow flex-shrink ml-4 overflow-hidden ">
+    <h6 *ngIf="content" class="text-lg font-bold truncate">{{ content }}</h6>
+    <div
+      *ngIf="content == null"
+      class="w-full h-full leading-normal bg-gray-400"
+    >
+      &nbsp;
+    </div>
+  </div>
+</div>

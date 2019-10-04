@@ -1,0 +1,19 @@
+<app-async-page
+  *ngIf="store | async as s"
+  [errorMessage]="s.error"
+  [loading]="s.loading"
+>
+  <div
+    class="flex flex-col sm:flex-wrap sm:flex-row sm:justify-center sm:max-w-64 sm:px-1 sm:mx-auto"
+    *ngIf="s.state"
+  >
+    <app-list-item
+      *ngFor="let product of s.state"
+      class="cursor-pointer"
+      [routerLink]="[product.id]"
+      [url]="product.image"
+      [content]="product.productName"
+    >
+    </app-list-item>
+  </div>
+</app-async-page>

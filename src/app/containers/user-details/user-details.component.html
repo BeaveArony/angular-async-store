@@ -1,0 +1,22 @@
+<app-async-page
+  *ngIf="store | async as s"
+  [errorMessage]="s.error"
+  [loading]="s.loading"
+>
+  <div *ngIf="s.state as user">
+    <app-user-card-ui
+      [userName]="user.userName"
+      [avatar]="user.avatar"
+      [name]="user.name"
+      [dob]="user.dob"
+      [catchPhrase]="user.company.catchPhrase"
+      [phrase]="user.phrase"
+      [phone]="user.phone"
+      [email]="user.email"
+      [street]="user.address.street"
+      [suite]="user.address.suite"
+      [zipcode]="user.address.zipcode"
+      [city]="user.address.city"
+    ></app-user-card-ui>
+  </div>
+</app-async-page>

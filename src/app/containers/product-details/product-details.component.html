@@ -1,0 +1,18 @@
+<app-async-page
+  *ngIf="store | async as s"
+  [errorMessage]="s.error"
+  [loading]="s.loading"
+>
+  <div *ngIf="s.state as product">
+    <app-product-card-ui
+      [color]="product.color"
+      [department]="product.department"
+      [productName]="product.productName"
+      [price]="product.price"
+      [productAdjective]="product.productAdjective"
+      [productMaterial]="product.productMaterial"
+      [product]="product.product"
+      [image]="product.image"
+    ></app-product-card-ui>
+  </div>
+</app-async-page>

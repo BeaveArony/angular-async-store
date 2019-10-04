@@ -1,0 +1,14 @@
+<div class="bg-white rounded-lg flex flex-col">
+  <div class="flex items-center p-4">
+    <p class="text-lg text-blue-800 font-bold flex-grow flex-shrink">
+      {{ title }}
+    </p>
+    <div *ngIf="loading" class="flex-shrink-0">
+      <mat-spinner [diameter]="24"></mat-spinner>
+    </div>
+  </div>
+  <div class="overflow-hidden p-2">
+    <div class="text-red-800 font-bold px-2" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <ng-content class="" *ngIf="!errorMessage"></ng-content>
+  </div>
+</div>
